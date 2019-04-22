@@ -6,10 +6,11 @@
 </head>
 <body>
 <table>
-    <th>Nume</th> <th>Phonenumber</th> <th>Mail</th>
+    <th>Nume</th> <th>Phonenumber</th> <th>Mail</th> <th> Deleting an entry </th>
 {% for person in persons %}
     <tr>
         <td> {{person.nume}} </td> <td> {{person.phonenumber}} </td> <td> {{person.mail}} </td>
+        <td> <a href="deleteperson/{{person.id}}"> Delete </a></td>
     </tr>
 
 {% endfor %}
