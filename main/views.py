@@ -7,6 +7,9 @@ def home(request):
 def formular(request):
     return render(request, "main/formular.html")
 
+def table(request):
+    return
+
 def formular_submit(request):
     return render(request, "main/raspunsformular.html",{'name':request.POST['nume'],'prenume':request.POST['prenume'],
                                                         'trimite':request.POST['trimite']})
@@ -14,6 +17,11 @@ def formular_submit(request):
 from .forms import PersonForm
 
 from .models import Person
+
+def persons(request):
+    persons = Person.objects.all()
+    return render(request, "main/table.html", {"persons": persons})
+
 
 def person(request):
     if request.method == 'POST':
